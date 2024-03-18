@@ -1,0 +1,1 @@
+del *.obj;*.sys;*.pdb;*.log;*.wrn;*.err;*.mac /s

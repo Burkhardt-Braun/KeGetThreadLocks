@@ -1,0 +1,14 @@
+TARGETNAME=KeGetThreadLocks
+TARGETTYPE=DRIVER
+TARGETLIBS=$(DDK_LIB_PATH)\aux_klib.lib
+
+USER_C_FLAGS=$(USER_C_FLAGS) /GS
+
+SOURCES=\
+	Test-KeGetThreadLocks.c\
+        KeGetThreadLocks.c
+
+
+MSC_OPTIMIZATION=/Odi
+C_DEFINES= -Od $(C_DEFINES)  -DBUS_LOWER=1 -W3 -Od
+LINKER_FLAGS = $(LINKER_FLAGS) -ignore:4281,4217 -mapinfo:exports -map:Test-KeGetThreadLocks.map  /LTCG
