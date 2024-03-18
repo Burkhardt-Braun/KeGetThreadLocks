@@ -1,6 +1,6 @@
  KeGetThreadLocks
 
- Timestamp is 65f85acb (Mon Mar 18 16:16:27 2024)
+ Timestamp is 65f85be3 (Mon Mar 18 16:21:07 2024)
 
  Preferred load address is 0000000000010000
 
@@ -22,8 +22,8 @@
 
   Address         Publics by Value              Rva+Base               Lib:Object
 
- 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
  0000:00000000       ___safe_se_handler_table   0000000000000000     <absolute>
+ 0000:00000000       ___safe_se_handler_count   0000000000000000     <absolute>
  0001:00000010       KeGetCurrentThread         0000000000011010 f i test-kegetthreadlocks.obj
  0001:00000020       MyWorkItemCheckingRoutine  0000000000011020 f   test-kegetthreadlocks.obj
  0001:00000230       BlockingRoutine            0000000000011230 f   test-kegetthreadlocks.obj
@@ -51,7 +51,7 @@
  0001:00000af0       ??_C@_0BE@CHMIGDPB@KeCancelTimer?$CI?$CJ?5?$CFd?6?$AA@FNODOBFM@ 0000000000011af0     test-kegetthreadlocks.obj
  0001:00000b10       ??_C@_0BA@BJFGNECA@driver?5unload?$AN?6?$AA@FNODOBFM@ 0000000000011b10     test-kegetthreadlocks.obj
  0001:00000b20       ??_C@_0M@KJLJHNNO@Mar?518?52024?$AA@FNODOBFM@ 0000000000011b20     test-kegetthreadlocks.obj
- 0001:00000b30       ??_C@_08KGDEIPAH@16?316?327?$AA@FNODOBFM@ 0000000000011b30     test-kegetthreadlocks.obj
+ 0001:00000b30       ??_C@_08JBAEPFNH@16?321?307?$AA@FNODOBFM@ 0000000000011b30     test-kegetthreadlocks.obj
  0001:00000b40       ??_C@_0M@GIPELPKM@DriverEntry?$AA@FNODOBFM@ 0000000000011b40     test-kegetthreadlocks.obj
  0001:00000b50       ??_C@_09GPBPOFIE@?$CFs?5?$CFs?5?$CFs?6?$AA@FNODOBFM@ 0000000000011b50     test-kegetthreadlocks.obj
  0001:00000b60       ??_C@_0BJ@JCCIKJBA@Hellodriver?3?5?$CFs?5fRet?5?$CFd?6?$AA@FNODOBFM@ 0000000000011b60     test-kegetthreadlocks.obj
