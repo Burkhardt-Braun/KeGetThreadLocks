@@ -13,7 +13,11 @@
 #endif
 
 
-extern NTSTATUS KeGetThreadLocks(PKTHREAD pKThread, //thread that is researched
-	                             PKWAIT_BLOCK pKWaitBlockBuffer, //copy(!) of the wait objects
-	                             PLONG pNumBuffer);// number of elements
+extern NTSTATUS KeGetThreadLocks(
+		PKTHREAD     IN     pKThread,//thread that is researched
+		PKWAIT_BLOCK OUT    pKWaitBlockBuffer,//copy(!) of the wait objects
+		PLONG        IN OUT pNumObjects // number of elements in and out
+	);
+
+
 #endif /*#ifndef _KEGETTHREADLOCKS_H*/

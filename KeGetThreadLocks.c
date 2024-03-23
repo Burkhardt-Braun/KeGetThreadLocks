@@ -28,15 +28,24 @@ typedef struct {
 
 /*****************************************************************************************************/
 /*
+extern NTSTATUS KeGetThreadLocks(
+		PKTHREAD     IN     pKThread,//thread that is researched
+		PKWAIT_BLOCK OUT    pKWaitBlockBuffer,//copy(!) of the wait objects
+		PLONG        IN OUT pNumObjects // number of elements in and out
+	);
+*
+* The maximum number of elements that pKWaitBlockBuffer can store is provided
+* in *pNumObjects. The elements delivered is stored there.
+* pKWaitBlockBuffer is memoryx provided by the caler of the function.
 * 
 * returns STATUS_SUCCESS if OK
 * returns STATUS_INVALID_PARAMETER is any parameter is wrong
 * returns -1 if Thread is running instead of waiting
 * 
 */
-NTSTATUS KeGetThreadLocks(PKTHREAD pKThread, 
-	                      PKWAIT_BLOCK pKWaitBlockBuffer, 
-	                      PLONG pNumObjects)
+NTSTATUS KeGetThreadLocks(PKTHREAD     IN     pKThread, 
+	                      PKWAIT_BLOCK OUT    pKWaitBlockBuffer, 
+	                      PLONG        IN OUT pNumObjects)
 {
 	INT nLoopCount = 0;
 	PUCHAR pHeadPtr = NULL;

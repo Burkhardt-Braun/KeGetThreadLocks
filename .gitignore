@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/sc_create.bat
+/prep.bat
+/Hellodriver.vcxproj.filters
+/Hellodriver.vcxproj
+/Hellodriver.sln
+/hellodriver.map
+/CppProperties.json
+/clean.bat
+/buildlib.bat
+/Test-KeGetThreadLocks.map
+/update.bat

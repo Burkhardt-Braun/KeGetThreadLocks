@@ -31,8 +31,8 @@ static VOID MyWorkItemCheckingRoutine(PVOID pContext);
 
 static KEVENT event;//simple check if KeWaitForSingleObject is working
 static HANDLE hThread;
-static KTIMER              m_TimerEvent = { 0 };           // timer
-static KDPC                m_Dpc;                  // DPC for timer
+static KTIMER m_TimerEvent = { 0 };           // timer
+static KDPC   m_Dpc;                  // DPC for timer
 
 static PWORK_QUEUE_ITEM workItemChecking = (PWORK_QUEUE_ITEM)NULL;
 static KEVENT EventArray[MAX_EVENTS+1];
@@ -47,7 +47,7 @@ static INT CheckNOTOK = 0, CheckOK = 0;
 static VOID MyWorkItemCheckingRoutine(PVOID pContext)
 {
 	static LARGE_INTEGER   bMillisecIn100ns;
-	int i;
+	INT i;
 	static KWAIT_BLOCK pWaitBlocks[MAX_EVENTS * 2];
 	static LONG uNumEvents = NELEM(pWaitBlocks);
 	NTSTATUS ntStatus = (NTSTATUS)~0;
@@ -89,9 +89,10 @@ static VOID MyWorkItemCheckingRoutine(PVOID pContext)
 		if (0 == ntStatus)
 		{
 
-#ifdef USE_MULTIPLEOBJECTS	
+
 			for (i = 0; i < (int)uNumEvents; ++i)
 			{
+#ifdef USE_MULTIPLEOBJECTS	
 				if (pEventBlocking[i] != (PVOID)pWaitBlocks[i].Object)
 #else
 		    	if ((PVOID) & event != (PVOID)pWaitBlocks[i].Object)
@@ -102,7 +103,7 @@ static VOID MyWorkItemCheckingRoutine(PVOID pContext)
 			    else
 			    {
 				   CheckOK += 1;
-			     }
+			    }
 		    }
 
      		DbgPrintEx( 0,0, "Check OK %d Check NOT OK %d\n",CheckOK,CheckNOTOK);
@@ -114,7 +115,7 @@ static VOID MyWorkItemCheckingRoutine(PVOID pContext)
 static VOID BlockingRoutine(PVOID pContext)
 {
 	NTSTATUS ret;
-	int i;
+	INT i;
 	
 	
 	for (; 0 == isUnloading; )
